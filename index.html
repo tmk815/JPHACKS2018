@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js App</title>
+    <link href="main.css" rel="styleseet">
+</head>
+<body>
+    <input type="text" v-model="serachId" placeholder="id検索">
+    
+    <div id="github">
+        <ul>
+            <li v-for="repo in repos">
+                <a v-bind:href="repo.html_url" target="_blank">{{repo.name}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="qiita">
+        <ul>
+            <li v-for="article in articles">
+                <a v-bind:href="article.url" target="_blank">{{article.title}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
