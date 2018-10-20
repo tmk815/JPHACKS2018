@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue.js App</title>
-    <link href="main.css" rel="styleseet">
+    <link rel="stylesheet" type="text/css" href="main.css" />
+
 </head>
-<body>    
+<body>
     <div id="github">
         <ul>
             <li v-for="repo in repos">
-                <a v-bind:href="repo.html_url" target="_blank">{{repo.name}}</a>
+                <div class="product">
+                    <div class="product-github">
+                        <a v-bind:href="repo.html_url" target="_blank">{{repo.name}}</a>
+                        {{repo.language}}
+                        <span class="onsale-section"><span class="onsale">GitHub</span></span>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
@@ -17,10 +24,17 @@
     <div id="qiita">
         <ul>
             <li v-for="article in articles">
-                <a v-bind:href="article.url" target="_blank">{{article.title}}</a>
+                <div class="product">
+                    <div class="product-qiita">
+                        <a v-bind:href="article.url" target="_blank">{{article.title}}</a>
+                            <span class="onsale-section"><span class="onsale">Qiita</span></span>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
+
+        
 
     <script
         src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
